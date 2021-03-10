@@ -1,0 +1,660 @@
+/*-_-_-_-_-_-_-_-_-_-_- ALL HTML _-_-_-_-_-_-_-_-_-_-*/
+html,
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100%;
+    text-align: center;
+}
+
+header {
+    color: white;
+    text-decoration: none;
+    cursor: crosshair;
+}
+
+section {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/*-_-_-_-_-_-_-_-_-_-_- TITLE PAGES _-_-_-_-_-_-_-_-_-_-*/
+
+.Title {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.Title h2 {
+    padding: 10px;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+.container {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.front {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100%;
+}
+
+.wrapper-img {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    padding: 0px;
+    /*top: 60px;*/
+}
+
+.column-front {
+    float: none;
+    width: 33.33%;
+}
+
+.image,
+.video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+    /*padding: 10px;*/
+}
+
+.image:hover,
+.video:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+
+}
+
+/* header  */
+
+.header {
+    position: absolute;
+    text-align: left;
+    top: 50%;
+    left: 450px;
+    transform: translate(-50%, -50%);
+    font-family: "Monument Extended", sans-serif;
+    padding: 10px;
+    border: 5px solid white;
+}
+
+.header h1 {
+    font-size: 100px;
+    text-transform: uppercase;
+    margin: 0;
+    mix-blend-mode: overlay;
+    letter-spacing: 5px;
+}
+
+.header-1 {
+    display: inline-block;
+    color: red;
+}
+
+.header-2 {
+    color: white;
+}
+
+
+
+.logo-img {
+    padding: 10px;
+    height: 40px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.nav {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    z-index: 1;
+    background-color: #0b0b0b;
+    /* BACKGROUND COLOR WHEN ITS IN THE TOP OF THE PAGE */
+    top: 0;
+}
+
+.nav.scrolled {
+    background-color: dimgrey;
+    transition: background-color 800ms linear;
+}
+
+.nav #menu {
+    padding: 0;
+    margin: 0;
+    float: left;
+    right: 40px;
+    position: fixed;
+}
+
+.nav #menu li {
+    padding-left: 40px;
+    display: inline-block;
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 14px;
+    top: 20px;
+    position: relative;
+    transition: all 500ms ease-out;
+}
+
+.nav #menu li a {
+    transition: all 800ms ease-out;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav #menu li a:hover {
+    text-decoration: overline;
+    color: #fff;
+    transition: all 500ms ease-out;
+}
+
+#toggle {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 2;
+    float: right;
+    transition: all 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 11px;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 2;
+    float: right;
+    transition: all 0.3s ease-out;
+}
+
+#resize {
+    color: white;
+    z-index: 2;
+    top: 0px;
+    position: fixed;
+    background: #0b0b0b;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.6s ease-out;
+}
+
+#resize #menu {
+    height: 90px;
+    position: absolute;
+    left: 45%;
+    transform: translateX(-40%);
+    text-align: center;
+    display: table-cell;
+    vertical-align: center;
+}
+
+#resize #menu li {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 50px;
+    min-height: 50px;
+    transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+    margin-top: 140px;
+}
+
+#resize #menu li a {
+    text-decoration: none;
+}
+
+#resize #menu li a:hover {
+    text-decoration: overline;
+}
+
+#resize.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media(max-width: 900px) {
+    #toggle {
+        visibility: visible;
+        opacity: 1;
+
+    }
+
+    .nav {
+        width: 100%;
+    }
+
+    .nav #brand {
+        margin-left: 10px;
+    }
+
+    #resize ul li a {
+        font-size: 15px;
+        font-weight: lighter;
+        color: #ffffff;
+        transition: all 500ms ease-out;
+    }
+
+    .nav #menu {
+        display: none;
+    }
+
+    .header {
+        left: 50%;
+        text-align: left;
+        padding: 10px;
+
+    }
+
+    .header h1 {
+        font-size: 40px;
+    }
+
+    .image,
+    .video {
+        -webkit-filter: grayscale(1);
+        filter: grayscale(1);
+        pointer-events: none;
+    }
+}
+
+@media(min-width: 900px) {
+    #resize {
+        visibility: hidden !important;
+    }
+}
+
+.big-num {
+    font-size: 55px;
+}
+
+.text1 {
+    height: 100vh;
+}
+
+
+.second {
+    text-align: center;
+
+}
+
+.img-center {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    width: 100%;
+}
+
+.img-t {
+    height: 80vh;
+}
+
+.box-l {
+    display: block;
+    line-height: 50px;
+    padding: 10px;
+    counter-increment: section;
+    font-size: 25px;
+    min-width: 250px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.box-l p {
+    margin: 0;
+}
+
+.box-l:nth-child(odd) {
+    padding-left: 0;
+    text-align: left
+}
+
+.box-l:nth-child(even) {
+    padding-right: 0;
+    text-align: right;
+}
+
+.red-name {
+    color: red;
+}
+
+
+
+/*-_-_-_-_-_-_-_-_-_-_- SERVICE _-_-_-_-_-_-_-_-_-_-*/
+
+/*---------------- all --------------------*/
+.service
+
+/*-- SECTION --*/
+    {
+    height: 70vh
+}
+
+.serv-div
+
+/*-- DIV--*/
+    {
+    padding: 10px;
+    height: 80vh;
+    display: block;
+}
+
+.serv-div ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.serv-div ul li {
+    padding: 10px;
+    counter-increment: section;
+    min-width: 250px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.serv-div ul li p {
+    margin: 0;
+}
+
+.box-li:nth-child(odd) {
+    padding-left: 0;
+    text-align: left;
+    padding: 0;
+}
+
+.box-li:nth-child(even) {
+    padding-right: 0;
+    text-align: right;
+    padding: 0;
+}
+
+.serv-div ul li a {
+    font-size: 55px;
+}
+
+.img-div {
+    position: absolute;
+    width: 100%
+}
+
+.img-t {
+    height: 50vh;
+}
+
+/*---------------- RESPONSIVE --------------------*/
+
+@media screen and (max-width: 590px) {
+    .serv-div ul {
+        font-size: 20px;
+    }
+
+    .serv-div ul li {
+        margin-bottom: 10px;
+        margin-left: 5%;
+    }
+
+    .serv-div ul li a {
+        font-size: 35px;
+    }
+
+    .box-li:nth-child(even) {
+        text-align: left;
+    }
+
+    .img-div {
+        right: 10%;
+    }
+
+    .img-t {
+        height: 50vh;
+        float: right;
+    }
+
+}
+
+
+
+/*-_-_-_-_-_-_-_-_-_-_- FOOTER _-_-_-_-_-_-_-_-_-_-*/
+
+/*---------------- all footer --------------------*/
+
+
+.footer-distributed {
+    background-color: #000000;
+    /* background-color: #FDC000; */
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    padding: 50px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*---------------- left --------------------*/
+.footer-left {
+    width: 35%;
+    color: white;
+    /* color: black; */
+}
+
+.footer-distributed h3 {
+    font-size: 40px;
+    margin: 0;
+}
+
+
+.footer-links {
+    margin: 20px 0 12px;
+    padding: 0;
+}
+.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+.footer-company-name {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/*---------------- center --------------------*/
+
+/*----- all ------*/
+.location,
+.phones,
+.mail {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+    height: auto;
+}
+
+.loc-list,
+.phone-list,
+.mail-list {
+    vertical-align: top;
+    display: block;
+}
+
+.footer-center ul {
+    display: inline-block;
+    color: white;
+    /* color: black; */
+    margin: 0;
+    padding: 0;
+}
+
+.footer-center {
+    width: 35%;
+}
+
+
+/*----- location ------*/
+.location ul {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+    list-style: none;
+    text-align: left;
+}
+
+.uber-big {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -10px;
+}
+
+/*----- phone ------*/
+.phones {
+    top: 0;
+    margin-left: 0;
+    list-style: none;
+}
+
+.phones li {
+    list-style: none;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/*----- mail ------*/
+.mail-list {
+    list-style: none;
+    color: white;
+    /* color: black; */
+    margin-bottom: 10px;
+}
+
+/*----- icons ------*/
+.icon-footer-center {
+    color: white;
+    /* color: black; */
+    display: inline-block;
+    text-align: center;
+    font-size: 25px;
+    height: 38px;
+    width: 38px;
+    line-height: 42px;
+    padding: 5px;
+    vertical-align: top;
+    padding-top: 0;
+}
+
+/*---------------- Right ---------------------------*/
+.footer-right {
+    width: 20%;
+}
+
+.footer-company-about {
+    line-height: 20px;
+    color: white;
+    /* color: black; */
+    font-size: 13px;
+    margin: 0;
+}
+
+.footer-company-about span {
+    display: block;
+    color: white;
+    /* color: black; */
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 880px) {
+
+
+.footer-left, .footer-center, .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .location,
+    .phones,
+    .mail {
+        text-align: center;
+    }
+}
+
+/*-_-_-_-_-_-_-_-_-_-_- ASSINATURA _-_-_-_-_-_-_-_-_-_-*/
+
+hr {
+    border-top: 1px solid white;
+    margin: 0;
+}
+
+.assinatura {
+    font-size: 15px;
+    text-align: center;
+    font-weight: 300;
+    background-color: black;
+    padding: 10px;
+    height: 35px;
+}
+
+.assinatura p {
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    display: inline;
+    vertical-align: middle;
+}
+
+.icon-sign {
+    color: white;
+    /* color: black; */
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    height: 35px;
+    width: 35px;
+    line-height: 42px;
+    vertical-align: middle;
+    padding-top: 0;
+}

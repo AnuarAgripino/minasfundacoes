@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- 
+    
+    
+                        DESENVOLVIDO POR ANUAR AGRIPINO.
+    
+    
+-->
+
+<head>
+    <!-- Titulo da página -->
+    <title>Minas Fundações</title>
+
+    <!-- codificação de caracteres -->
+    <meta charset="utf-8">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/styleee.css">
+
+    <!-- Esta meta é exclusiva para Internet Explorer (introduzido no IE8), ela pode configurar a página para ser renderizada como em outra versão do Internet Explorer. -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Idioma da página -->
+    <meta http-equiv="Content-Language" content="pt-br">
+
+    <!-- Google fontes -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:300" rel="stylesheet">
+
+
+    <!-- icons -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+
+    <!-- for on scroll animations -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/daneden/animate.css/v3.1.0/animate.min.css">
+    <script src="https://cdn.rawgit.com/matthieua/WOW/1.0.1/dist/wow.min.js"></script>
+
+</head>
+
+<body>
+
+    <!------------------------------------------- HEADER BAR AND MENU ---------------------------------------------------------------------->
+    <header>
+        <div class="all-menu">
+
+            <div class="logo">
+                <img class="logo-img" src="IMG/logo_left.png">
+            </div>
+
+            <nav class="nav">
+
+                <ul id="menu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#service">SERVIÇOS</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+
+                <div id="toggle">
+                    <div class="span">menu</div>
+                </div>
+
+            </nav>
+
+            <div id="resize">
+                <div class="close-btn">close</div>
+
+                <ul id="menu">
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#service">SERVIÇOS</a></li>
+                    <li><a href="#contact">CONTATO</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script>
+            // navigation starts here
+            $("#toggle").click(function() {
+                $(this).toggleClass('on');
+                $("#resize").toggleClass("active");
+            });
+            $("#resize ul li a").click(function() {
+                $(this).toggleClass('on');
+                $("#resize").toggleClass("active");
+            });
+            $(".close-btn").click(function() {
+                $(this).toggleClass('on');
+                $("#resize").toggleClass("active");
+            });
+
+            $(function() {
+                $(document).scroll(function() {
+                    var $nav = $(".nav");
+                    $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
+            });
+
+            new WOW().init();
+
+            // Select all links with hashes
+            $('a[href*="#"]')
+                // Remove links that don't actually link to anything
+                .not('[href="#"]')
+                .not('[href="#0"]')
+                .click(function(event) {
+                    // On-page links
+                    if (
+                        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                        location.hostname == this.hostname
+                    ) {
+                        // Figure out element to scroll to
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        // Does a scroll target exist?
+                        if (target.length) {
+                            // Only prevent default if animation is actually gonna happen
+                            event.preventDefault();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000, function() {
+                                // Callback after animation
+                                // Must change focus!
+                                var $target = $(target);
+                                $target.focus();
+                                if ($target.is(":focus")) { // Checking if the target was focused
+                                    return false;
+                                } else {
+                                    $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                                    $target.focus(); // Set focus again
+                                };
+                            });
+                        }
+                    }
+                });
+        </script>
+
+    </header>
+
+    <!------------------------------------------- INITIAL PAGE ----------------------------------------------------------------------->
+
+    <section class="front" id="home">
+
+        <div class="wrapper-img">
+
+            <div class="column-front">
+                <img class="image" src="IMG/IMG.jpg">
+            </div>
+
+            <div class="column-front">
+                <video class="video" loop="true" autoplay="autoplay" muted="muted">
+                    <source src="IMG/video-4.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="column-front">
+                <img class="image" src="IMG/IMG-2.jpg">
+            </div>
+
+        </div>
+
+        <div class="header">
+            <h1 class="header-1">MINAS</h1>
+            <h1 class="header-2">FUNDAÇÕES</h1>
+        </div>
+
+    </section>
+    <!------------------------------------------- SERVIÇOS ----------------------------------------------------------------------->
+
+    <div class="Title" id="service">
+        <h2>NOSSOS SERVIÇOS</h2>
+    </div>
+
+    <section class="service">
+
+        <div class="serv-div">
+
+            <div class="img-div">
+                <img class="img-t wow fadeInRight" data-wow-delay="0.4s" src="IMG/time.png">
+            </div>
+
+            <ul>
+                <li class="box-li wow fadeInLeft" data-wow-delay="0.6s">
+                    <p>Diâmetro de até</p>
+                    <a>1,2 m</a>
+                </li>
+                <li class="box-li wow fadeInRight" data-wow-delay="0.6s">
+                    <p>Profundidade de até</p>
+                    <a>24 m</a>
+                </li>
+                <li class="box-li wow fadeInLeft" data-wow-delay="0.6s">
+                    <p>Praticidade</p>
+                    <a>-Tempo</a>
+                </li>
+                <li class="box-li wow fadeInRight" data-wow-delay="0.6s">
+                    <p>Praticidade</p>
+                    <a>+Agilidade</a>
+                </li>
+                <li class="box-li wow fadeInLeft" data-wow-delay="0.6s">
+                    <p>Custo</p>
+                    <a>+Economia</a>
+                </li>
+                <li class="box-li wow fadeInRight" data-wow-delay="0.6s">
+                    <p>Padrão</p>
+                    <a>+Qualidade</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </section>
+
+
+    <!------------------------------------------- FOOTER -------------------------------------------------------------------------------->
+    <!--------- FOOTER ALL --------->
+    <footer class="footer-distributed" id="contact">
+
+        <!--------- FOOTER LEFT --------->
+        <div class="footer-left">
+
+
+            <h3><a class="red-name">MINAS</a> FUNDAÇÕES</h3>
+
+            <p class="footer-links">
+                <a href="#home">HOME</a>
+                |
+                <a href="#service">SERVIÇOS</a>
+                |
+                <a href="#contact">CONTATO</a>
+            </p>
+
+            <p class="footer-company-name">Minas Fundações &copy; 2021</p>
+        </div>
+
+        <!--------- FOOTER CENTER --------->
+        <div class="footer-center">
+
+
+            <div class="location">
+                <a class="icon-footer-center">
+                    <ion-icon name="location-outline"></ion-icon>
+                </a>
+                <ul class="loc-list">
+                    <li>21 Revolution Street</li>
+                    <li class="uber-big"> Uberlândia, Minas Gerais.</li>
+                </ul>
+            </div>
+
+            <div class="phones">
+                <a class="icon-footer-center">
+                    <ion-icon name="call-outline"></ion-icon>
+                </a>
+                <ul class="phone-list">
+                    <li>(34) 3222-7590</li>
+                    <li>(34) 99322-0598 - Ivanei</li>
+                    <li>(34) 99971-6950 - Ivanildo</li>
+                </ul>
+            </div>
+
+            <div class="mail">
+
+                <a class="icon-footer-center">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+
+                <ul class="mail-list">
+                    <li>
+                        <a href="mailto:support@company.com" class="mail-list">contact@webdevtrick.com</a>
+                    </li>
+                    <li>
+                        <a href="mailto:support@company.com" class="mail-list">contact@webdevtrick.com</a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!--------- FOOTER RIGHT --------->
+        <div class="footer-right">
+
+
+            <p class="footer-company-about">
+                <span>Sobre a empresa</span>
+                Minas Fundações é uma empresa voltada para o setor de construção civil. Atendendo todo o Triângulo Mineiro e Região.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!---------------------------- ASSINATURA -------------------------------------------------------------------------------------->
+    <hr>
+    <div class="assinatura">
+        <p> Desenvolvido por Anuar Agripino</p>
+        <a class="icon-sign"  href="https://www.linkedin.com/in/anuaragripino/" target="_blank">
+            <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a class="icon-sign" href="https://github.com/AnuarAgripino" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a class="icon-sign" href="mailto:anuaragripino@gmail.com" target="_blank">
+            <ion-icon name="mail-outline"></ion-icon>
+        </a>
+        
+    </div>
+
+
+</body></html>
