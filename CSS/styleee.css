@@ -547,6 +547,11 @@ section {
 }
 
 /*----- phone ------*/
+.phone-list {
+    list-style: none;
+    text-decoration: none;
+}
+
 .phones {
     top: 0;
     margin-left: 0;
@@ -565,6 +570,7 @@ section {
     color: white;
     /* color: black; */
     margin-bottom: 10px;
+    text-decoration: none;
 }
 
 /*----- icons ------*/
