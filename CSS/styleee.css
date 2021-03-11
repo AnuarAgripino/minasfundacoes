@@ -516,6 +516,9 @@ section {
 .mail-list {
     vertical-align: top;
     display: block;
+    list-style: none;
+    text-decoration: none;
+    color: white;
 }
 
 .footer-center ul {
@@ -547,10 +550,6 @@ section {
 }
 
 /*----- phone ------*/
-.phone-list {
-    list-style: none;
-    text-decoration: none;
-}
 
 .phones {
     top: 0;
